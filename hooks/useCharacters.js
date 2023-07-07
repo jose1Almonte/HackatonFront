@@ -6,7 +6,7 @@ export function useCharacters() {
 
     const getCharacters = async () => {
         const response = await fetchAllCharacters();
-        console.log('response',response.data.results);
+        // console.log('response',response.data.results);
         setCharacters(response.data.results);
     };
 
