@@ -19,5 +19,5 @@ const cardStyles = StyleSheet.create({
     imageStyles:{
         height: 100,
         width: 100,
-    }
-})
+    },
+});
