@@ -3,16 +3,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import { StyleSheet } from 'react-native';
+import { ThemeContextProvider } from './contexts/ThemeContext';
+import { hexToRGBA } from './helpers/convertionHelpers';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ThemeContextProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeContextProvider>
   );
 }
 
@@ -44,5 +48,12 @@ export const textDarkModeStyles = StyleSheet.create({
 
   description: {
     color: 'white',
+  },
+});
+
+export const buttonGenericStyles = StyleSheet.create({
+  normalButton: {
+    backgroundColor: hexToRGBA('#0000FF', 0.5),
+    borderRadius: 5,
   },
 });

@@ -1,22 +1,29 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useCharacters } from '../../hooks/useCharacters';
 import { Card } from '../../components/Card/Card';
-import { textDarkModeStyles, textLightModeStyles } from '../../App';
-import useColorScheme from '../../hooks/useColorScheme';
+import { buttonGenericStyles, textDarkModeStyles, textLightModeStyles } from '../../App';
+// import useColorScheme from '../../hooks/useColorScheme';
+import { useTheme } from '../../contexts/ThemeContext';
 
 function HomeScreen() {
 
     const {characters} = useCharacters();
-    const {colorScheme} = useColorScheme();
-
+    // const {colorScheme} = useColorScheme();
+    const {theme, changeTheme} = useTheme();
 
   return (
-    <ScrollView 
-    style={colorScheme === 'dark' ? homeDarkModeStyles.backGround : homeLightModeStyles.backGround}
+    <ScrollView
+    style={theme === 'dark' ? homeDarkModeStyles.backGround : homeLightModeStyles.backGround}
     contentContainerStyle={homeStyles.backGround}
     >
-      <Text style={colorScheme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>HomeScreen</Text>
+      <Text style={theme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>HomeScreen</Text>
+
+    <TouchableOpacity style={buttonGenericStyles.normalButton} onPress={() => {changeTheme();}}>
+      <Text>Current Theme: {theme}</Text>
+      {/* <Text>Change Theme</Text>
+      <Text>Change Theme</Text> */}
+    </TouchableOpacity>
 
       <View style={homeStyles.cardsContainer}>
 
