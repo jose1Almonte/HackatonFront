@@ -1,19 +1,19 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import { textDarkModeStyles, textLightModeStyles } from '../../App';
-import useColorScheme from '../../hooks/useColorScheme';
 import { hexToRGBA } from '../../helpers/convertionHelpers';
+import { useTheme } from '../../contexts/ThemeContext';
 
 export const Card = ({character}:{character: any}) => {
 
-    const {colorScheme} = useColorScheme();
+    const {theme} = useTheme();
 
     return (
-    <View style={colorScheme === 'dark' ? [cardDarkStyles.containerCard, cardStyles.containerCard] : [cardLightStyles.containerCard, cardStyles.containerCard]}>
+    <View style={theme === 'dark' ? [cardDarkStyles.containerCard, cardStyles.containerCard] : [cardLightStyles.containerCard, cardStyles.containerCard]}>
         <View style={cardStyles.textBox}>
 
-        <Text style={colorScheme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>Hello {character.name}</Text>
-        <Text style={colorScheme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>{character.id}</Text>
+        <Text style={theme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>Hello {character.name}</Text>
+        <Text style={theme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>{character.id}</Text>
 
         </View>
 
