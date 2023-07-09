@@ -28,8 +28,8 @@ function HomeScreen() {
 
       <View style={homeStyles.cardsContainer}>
 
-      {characters.map((character, index) => (
-        <Card character={character} key={index}/>
+        {characters.map((character, index) => (
+          <Card character={character} key={index}/>
         ))}
 
       </View>
