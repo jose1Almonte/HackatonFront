@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+// import { View, Text } from 'react-native';
 import React, { useEffect, useState, createContext, useContext } from 'react';
 import EncryptedStorage from 'react-native-encrypted-storage';
 
