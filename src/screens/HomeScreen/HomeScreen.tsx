@@ -4,7 +4,7 @@ import { useCharacters } from '../../hooks/useCharacters';
 import { Card } from '../../components/Card/Card';
 import { useTheme } from '../../contexts/ThemeContext';
 import { CommonTouchableText } from '../../components/commons/CommonTouchableText/CommonTouchableText';
-import { CommonTitle } from '../../components/commons/CommonText/CommonText';
+import { CommonTitle } from '../../components/commons/CommonTouchableText/CommonText';
 import { globalButtonDarkModeStyles, globalButtonGenericStyles, globalButtonLightModeStyles } from '../../Styles/GlobalStyles/GlobalStyles';
 
 function HomeScreen() {
