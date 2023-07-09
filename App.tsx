@@ -1,10 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import HomeScreen from './screens/HomeScreen/HomeScreen';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 import { StyleSheet } from 'react-native';
-import { ThemeContextProvider } from './contexts/ThemeContext';
-import { hexToRGBA } from './helpers/convertionHelpers';
+import { ThemeContextProvider } from './src/contexts/ThemeContext';
+import { hexToRGBA } from './src/helpers/convertionHelpers';
 
 const Stack = createNativeStackNavigator();
 

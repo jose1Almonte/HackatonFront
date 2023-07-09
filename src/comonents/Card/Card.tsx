@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
-import { textDarkModeStyles, textLightModeStyles } from '../../App';
+import { textDarkModeStyles, textLightModeStyles } from '../../../App';
 import { hexToRGBA } from '../../helpers/convertionHelpers';
 import { useTheme } from '../../contexts/ThemeContext';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useCharacters } from '../../hooks/useCharacters';
-import { Card } from '../../components/Card/Card';
-import { buttonGenericStyles, textDarkModeStyles, textLightModeStyles } from '../../App';
+import { Card } from '../../comonents/Card/Card';
+import { buttonGenericStyles, textDarkModeStyles, textLightModeStyles } from '../../../App';
 // import useColorScheme from '../../hooks/useColorScheme';
 import { useTheme } from '../../contexts/ThemeContext';
 
@@ -21,8 +21,6 @@ function HomeScreen() {
 
     <TouchableOpacity style={buttonGenericStyles.normalButton} onPress={() => {changeTheme();}}>
       <Text>Current Theme: {theme}</Text>
-      {/* <Text>Change Theme</Text>
-      <Text>Change Theme</Text> */}
     </TouchableOpacity>
 
       <View style={homeStyles.cardsContainer}>
