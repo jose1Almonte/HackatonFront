@@ -1,7 +1,15 @@
 import { StyleSheet } from 'react-native';
 
 export const globalTextStyles = StyleSheet.create({
-    text:{
+    title:{
+        fontSize: 15,
+    },
+
+    subTitle:{
+        fontSize: 15,
+    },
+
+    description:{
         fontSize: 15,
     },
 });

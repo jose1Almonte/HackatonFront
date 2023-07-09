@@ -6,6 +6,7 @@ import { buttonGenericStyles, textDarkModeStyles, textLightModeStyles } from '..
 // import useColorScheme from '../../hooks/useColorScheme';
 import { useTheme } from '../../contexts/ThemeContext';
 import { CommonTouchableText } from '../../components/commons/CommonTouchableText/CommonTouchableText';
+import { CommonTitle } from '../../components/commons/CommonText/CommonText';
 
 function HomeScreen() {
 
@@ -18,8 +19,8 @@ function HomeScreen() {
     style={theme === 'dark' ? homeDarkModeStyles.backGround : homeLightModeStyles.backGround}
     contentContainerStyle={homeStyles.backGround}
     >
-      <Text style={theme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>HomeScreen</Text>
 
+      <CommonTitle text="HomeScreen"/>
 
     <CommonTouchableText
     touchableStyles={buttonGenericStyles.normalButton}
@@ -31,6 +32,7 @@ function HomeScreen() {
       {characters.map((character, index) => (
         <Card character={character} key={index}/>
         ))}
+
       </View>
 
     </ScrollView>

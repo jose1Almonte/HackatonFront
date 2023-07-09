@@ -8,7 +8,7 @@ export function CommonTouchableText({touchableStyles, onPress, text}:{touchableS
 
   return (
     <TouchableOpacity style={touchableStyles} onPress={onPress}>
-      <Text style={[globalTextStyles.text, theme === 'dark' ? globalTextDarkModeStyles.title : globalTextLightModeStyles.title]}>{text}</Text>
+      <Text style={[globalTextStyles.subTitle, theme === 'dark' ? globalTextDarkModeStyles.title : globalTextLightModeStyles.title]}>{text}</Text>
     </TouchableOpacity>
   );
 }
