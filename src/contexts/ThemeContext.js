@@ -20,11 +20,6 @@ export function ThemeContextProvider ({children}) {
     // Guardar el tema seleccionado en el almacenamiento persistente
     const saveTheme = async (selectedTheme) => {
       try {
-        // await AsyncStorage.setItem('theme', selectedTheme);
-        // const jsonString = JSON.stringify(selectedTheme);
-        // console.log('your theme: ',selectedTheme);
-        // console.log('jsonString: ',jsonString);
-
         await EncryptedStorage.setItem(
             'theme',
             JSON.stringify({
@@ -41,11 +36,9 @@ export function ThemeContextProvider ({children}) {
     const getStoredTheme = async () => {
       try {
         const storedTheme = await EncryptedStorage.getItem('theme');
-        // console.log('storedTheme: ',storedTheme);
         if (storedTheme) {
             const parsedTheme = JSON.parse(storedTheme);
             const currentTheme = parsedTheme.currentTheme;
-            // console.log('currentTheme: ', currentTheme);
             return currentTheme;
           }
       } catch (error) {
@@ -56,26 +49,16 @@ export function ThemeContextProvider ({children}) {
     const changeTheme = async () => {
         switch (theme) {
           case 'light':
-            // console.log('entered');
             await saveTheme('dark');
-            // Alert.alert('Se cambió a dark')
             break;
-            case 'dark':
-              // console.log('entered');
-              await saveTheme('light');
-              // Alert.alert('Se cambió a light')
-              break;
-              default:
-                // console.log('entered');
-                await saveTheme('light');
-                // Alert.alert('NO HABIA NADA, Se cambió a light')
+          case 'dark':
+            await saveTheme('light');
+            break;
+          default:
+            await saveTheme('light');
             break;
         }
       };
-
-    // useEffect(() => {
-    //     console.log( 'theme: ',theme);
-    // }, [theme])
 
     return (
       <ThemeContext.Provider value={{ theme, changeTheme }}>
