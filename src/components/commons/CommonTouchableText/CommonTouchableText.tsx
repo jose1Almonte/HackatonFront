@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { globalTextDarkModeStyles, globalTextLightModeStyles, globalTextStyles } from '../../../Styles/GlobalStyles/GlobalStyles';
+import { globalTextDarkModeStyles, globalTextLightModeStyles, globalTextGenericStyles } from '../../../Styles/GlobalStyles/GlobalStyles';
 import { useTheme } from '../../../contexts/ThemeContext';
 
 export function CommonTouchableText({touchableStyles, onPress, text}:{touchableStyles: any, onPress: any, text: string}) {
@@ -8,7 +8,7 @@ export function CommonTouchableText({touchableStyles, onPress, text}:{touchableS
 
   return (
     <TouchableOpacity style={touchableStyles} onPress={onPress}>
-      <Text style={[globalTextStyles.subTitle, theme === 'dark' ? globalTextDarkModeStyles.title : globalTextLightModeStyles.title]}>{text}</Text>
+      <Text style={[globalTextGenericStyles.subTitle, theme === 'dark' ? globalTextDarkModeStyles.title : globalTextLightModeStyles.title]}>{text}</Text>
     </TouchableOpacity>
   );
 }

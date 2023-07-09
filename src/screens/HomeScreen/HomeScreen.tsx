@@ -1,12 +1,11 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { useCharacters } from '../../hooks/useCharacters';
 import { Card } from '../../components/Card/Card';
-import { buttonGenericStyles, textDarkModeStyles, textLightModeStyles } from '../../../App';
-// import useColorScheme from '../../hooks/useColorScheme';
 import { useTheme } from '../../contexts/ThemeContext';
 import { CommonTouchableText } from '../../components/commons/CommonTouchableText/CommonTouchableText';
 import { CommonTitle } from '../../components/commons/CommonText/CommonText';
+import { globalButtonDarkModeStyles, globalButtonGenericStyles, globalButtonLightModeStyles } from '../../Styles/GlobalStyles/GlobalStyles';
 
 function HomeScreen() {
 
@@ -23,7 +22,7 @@ function HomeScreen() {
       <CommonTitle text="HomeScreen"/>
 
     <CommonTouchableText
-    touchableStyles={buttonGenericStyles.normalButton}
+    touchableStyles={[globalButtonGenericStyles.normalButton, theme === 'light' ? globalButtonLightModeStyles.normalButton : globalButtonDarkModeStyles.normalButton]}
     onPress={() => {changeTheme();}}
     text={`Current Theme: ${theme}`}/>
 

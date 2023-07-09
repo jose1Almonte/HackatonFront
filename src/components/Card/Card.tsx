@@ -1,8 +1,8 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import React from 'react';
-import { textDarkModeStyles, textLightModeStyles } from '../../../App';
 import { hexToRGBA } from '../../helpers/convertionHelpers';
 import { useTheme } from '../../contexts/ThemeContext';
+import { CommonSubtitle, CommonTitle } from '../commons/CommonText/CommonText';
 
 export const Card = ({character}:{character: any}) => {
 
@@ -11,12 +11,9 @@ export const Card = ({character}:{character: any}) => {
     return (
     <View style={theme === 'dark' ? [cardDarkStyles.containerCard, cardStyles.containerCard] : [cardLightStyles.containerCard, cardStyles.containerCard]}>
         <View style={cardStyles.textBox}>
-
-        <Text style={theme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>Hello {character.name}</Text>
-        <Text style={theme === 'dark' ? textDarkModeStyles.title : textLightModeStyles.title}>{character.id}</Text>
-
+            <CommonTitle text={`Hello ${character.name}`}/>
+            <CommonSubtitle text={`${character.id}`}/>
         </View>
-
         <Image style={cardStyles.imageStyles} source={{ uri: character.image }} />
     </View>
   );
