@@ -2,7 +2,7 @@ import { View, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import { hexToRGBA } from '../../helpers/convertionHelpers';
 import { useTheme } from '../../contexts/ThemeContext';
-import { CommonSubtitle, CommonTitle } from '../commons/CommonTouchableText/CommonText';
+import { CommonSubtitle, CommonTitle } from '../commons/CommonText/CommonText';
 
 export const Card = ({character}:{character: any}) => {
 
